@@ -7,7 +7,7 @@ package JavaCoding;
  * @author sayray
  *
  */
-public class InheritanceExample {
+public class PolymorphismExample {
 
 	/**
 	 * @param args
