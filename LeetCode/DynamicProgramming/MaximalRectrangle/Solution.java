@@ -37,14 +37,9 @@ class Solution {
         //current cell, if current cell is 1.
         for(int r = 0; r < rows; r++){
             for(int c = 0; c < cols; c++){
-                if(c == 0){
-                    matrix[r][c] = matrix[r][c];
-                } else {
-                
+                if(c > 0){
                     if(matrix[r][c] == '1'){
                         matrix[r][c] = (char)(((matrix[r][c - 1] - '0') + 1) + '0');
-                    } else {
-                        matrix[r][c] = '0';
                     }
                 }
                 
