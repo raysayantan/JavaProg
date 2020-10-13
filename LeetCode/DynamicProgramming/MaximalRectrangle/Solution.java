@@ -47,15 +47,11 @@ class Solution {
                         matrix[r][c] = '0';
                     }
                 }
-            }
-        }
-        
-        //Traverse the matrix and for non-zero cells, try to calculate the maximum area till that point
-        //and it is calculated based on the following formula: suppose we have two row i and j, 
-        //for column c we get min value ammong the rows between matrix[i][c] and matrix[j][c] and
-        //let say this is width. and are will be width(j - i + 1);
-        for(int r = 0; r < rows; r++){
-            for(int c = 0; c < cols; c++){
+                
+                //Traverse the matrix and for non-zero cells, try to calculate the maximum area till now
+                //and it is calculated based on the following formula: suppose we have two row i and j, 
+                //for column c we get min value ammong the rows between matrix[i][c] and matrix[j][c] and
+                //let say this is width. and are will be width(j - i + 1);                
                 if(matrix[r][c] != '0'){
                     int area = 0;
                     int width = Integer.MAX_VALUE;
@@ -70,7 +66,6 @@ class Solution {
                 }
             }
         }
-        
         return maxArea;
     }
 }
