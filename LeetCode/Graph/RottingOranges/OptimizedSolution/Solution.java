@@ -47,18 +47,15 @@ class Solution {
         while(helper(total, grid)){
             total++;
         }    
-        //System.out.println(total);
         total = 0;
         for(int r = 0; r < rows; r++){
             for(int c = 0; c < cols; c++){
-                //System.out.print(grid[r][c] + " ");
                 if(grid[r][c] == 1){
                     return -1;
                 }
                 
                 total = Math.max(total, grid[r][c]);
             }
-            //System.out.println("");
         }
         
         if(total >= 2) 
