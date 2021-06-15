@@ -75,3 +75,27 @@ class Solution {
         return judge;
     }
 }
+
+/////////Better Solution///////////
+class Solution {
+    public int findJudge(int n, int[][] trust) {
+        int judge = -1;
+        //For the judge the diffence between indegree and out degree
+        //will be n - 1, as the judge will have all trust to him except
+        //himself and the judge does not trust anyone;
+        int[] degree = new int[n];
+        for(int idx = 0; idx < trust.length; idx++){
+            degree[trust[idx][1] - 1]++;
+            degree[trust[idx][0] - 1]--;
+        }
+        
+        for(int idx = 0; idx < n; idx++){
+            if(degree[idx] == n - 1){
+                judge = idx + 1;
+                break;
+            }
+        }
+        
+        return judge;
+    }
+}
