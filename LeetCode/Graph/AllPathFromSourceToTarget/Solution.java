@@ -46,13 +46,13 @@ class Solution {
         boolean[] v = new boolean[n];
         l.add(0);
         
-        helper(graph, res, 0, n - 1, l, v);
+        helper(graph, res, 0, l, v);
         
         return res;
     }
     
-    private void helper(int[][] graph, List<List<Integer>> res, int node, int n, List<Integer> l, boolean[] v){
-        if(node == n){
+    private void helper(int[][] graph, List<List<Integer>> res, int node, List<Integer> l, boolean[] v){
+        if(node == graph.length - 1){
             List<Integer> temp = new ArrayList<>();
             temp.addAll(l);
             res.add(temp);
@@ -64,7 +64,7 @@ class Solution {
             int next = graph[node][idx];
             if(v[next] == false){
                 l.add(next);
-                helper(graph, res, next, n, l, v);
+                helper(graph, res, next, l, v);
                 l.remove(l.size() - 1);
             }
         }
